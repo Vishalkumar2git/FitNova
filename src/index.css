@@ -1,0 +1,364 @@
+/* :root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+} */
+
+/* use css for layout  */
+
+.layout-container {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.sidebar {
+  display: none;
+  background-color: black;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+  padding: 0 3rem;
+}
+
+.sidebar-content {
+  max-width: 400px;
+  text-align: center;
+  color: #ffffff; /* Assuming primary foreground is white */
+}
+
+.sidebar h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa; /* Replace 'bg-background' with your actual background color */
+  padding: 3rem;
+}
+
+@media (min-width: 1024px) {
+  .sidebar {
+      display: flex;
+  }
+}
+
+
+ /* use adminlayout css */
+
+ .admin-layout {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.admin-main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.admin-content {
+  flex: 1;
+  display: flex;
+  background-color: #f1f3f5; /* Adjust color to match 'bg-muted/40' */
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .admin-content {
+      padding: 1.5rem;
+  }
+}
+
+
+/* use css of shoppinglayout */
+
+.shopping-layout {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  overflow: hidden;
+}
+
+.shopping-main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+
+/* admin header */
+.admin-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Black Toggle Button */
+.menu-toggle {
+  color: black !important;
+}
+
+/* Red Logout Button */
+.logout-button {
+  color: white !important;
+  background-color: red !important;
+}
+
+.logout-button:hover {
+  background-color: darkred !important;
+}
+
+/* Show the menu button only on small screens */
+@media (max-width: 1024px) {
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/* admin sidebar */
+
+.admin-sidebar {
+  display: none; /* Hidden on small screens */
+  width: 250px;
+  flex-direction: column;
+  border-right: 1px solid #ddd;
+  background-color: #f8f9fa;
+  padding: 24px;
+}
+
+/* Sidebar visible on large screens */
+@media (min-width: 1024px) {
+  .admin-sidebar {
+    display: flex;
+  }
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar-header:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.sidebar-icon {
+  font-size: 30px;
+  color: #333;
+}
+
+.sidebar-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+/* Menu styles */
+.menu {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: large;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.menu-item:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+
+/* shopping header */
+
+.shopping-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  width: 100%;
+  border-bottom: 1px solid #e5e7eb; 
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.shopping-header.dark {
+  border-color: #374151;
+  background-color: #111827; 
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .header-content {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header-content {
+    padding: 0 2rem; 
+  }
+}
+
+.home-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.home-icon {
+  height: 24px;
+  width: 24px;
+  margin-right: 8px;
+}
+
+.logo-text {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* filter options css */
+
+.product-filter {
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  background-color: #fff;
+  overflow: hidden;
+
+}
+
+.filter-header {
+  padding: 16px;
+  border-bottom: 1px solid #ddd;
+}
+
+.filter-body {
+  padding: 16px;
+}
+
+.filter-section {
+  margin-bottom: 12px;
+}
+
+.filter-title {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.filter-options {
+  display: grid;
+  gap: 0;
+  margin-top: 4px;
+}
+
+.filter-option {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+}
+
+.filter-checkbox {
+  padding: 0; 
+  margin-right: 0;
+}
+
+.short-divider {
+  margin-top: 10px;
+  border-color: #ccc;
+}
+
+
+
